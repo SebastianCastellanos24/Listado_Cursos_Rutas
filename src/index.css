@@ -1,0 +1,308 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.navbar {
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.fa-firstdraft {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 5px;
+  list-style: none;
+  text-align: center;
+  width: 45vw;
+  justify-content: end;
+  align-items: center;
+}
+
+.nav-item {
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-links {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+
+.fa-bars {
+  color: white;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 1110px) {
+  .nav-menu {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 120px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    padding-top: 10px;
+    
+  }
+
+  .nav-menu.active {
+    background: #00318b;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 10;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #045BFD;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: white;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 100%;
+    background: #045BFD;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+  }
+
+  .nav-links-mobile:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+    transition: 250ms;
+  }
+
+  .button {
+    display: none;
+  }
+}
+
+/* --- Header --- */
+.header {
+  background-image: linear-gradient( to right,  rgba(4, 91, 253, 0.8) 0%, rgba(4, 91, 253, 0.4) 100%), url(https://img.freepik.com/foto-gratis/fondos-hexagonales-geometricos-redes_23-2149755775.jpg?w=740&t=st=1685724798~exp=1685725398~hmac=3174105b9cbb305f979ea681e16b4e29410d1fdba0e5b4cba7c070a22dc334a7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center, center right;
+}
+
+/* --- Cards --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  margin-top: 20px;
+  perspective: 1000px;
+}
+
+.container_card{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card_father:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  width: 340px;
+  height: 334px;
+  box-shadow: 1px 0px 6px 5px rgba(163,163,163,0.4);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 800ms;
+  margin: auto;
+}
+
+.card_front, .card_back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card_back {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 400px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .card {
+    width: 300px;
+    height: 330px;
+    font-size: small;
+  }
+  
+}
+
+/* --- Swipper --- */
+.swiper-button-next, .swiper-button-prev{
+  color: white!important;
+  background-color: #00318b;
+  border-radius: 4px;
+  padding: 30px 20px;
+  transform: translateY(-35px);
+  transition-duration: 0.5s;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover{ 
+  color: #00318b!important;
+  background-color: white;
+}
+
+
+
+/* --- Description --- */
+.bg-info {
+  background-image: linear-gradient( to right,  rgba(0, 49, 139, 0.85) 0%, rgba(0, 49, 139, 0.85) 100%), url(https://img.freepik.com/foto-gratis/sala-conferencias-televisores-presentaciones_181624-26085.jpg?w=996&t=st=1685633605~exp=1685634205~hmac=8031e92ac98a3160088cd08135f366cd67ecc0c33ce24c1a8bb5253afea528ac);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center, bottom center;
+  background-attachment: fixed;
+}
+
+/* --- Courses --- */
+.cursos {
+  background-image: linear-gradient( to top,  rgba(4, 91, 253, 0.8) 0%, rgba(4, 91, 253, 0.0) 100%), url(https://img.freepik.com/vector-gratis/fondo-tecnologia-degradado_23-2149108836.jpg?w=996&t=st=1685029563~exp=1685030163~hmac=2c4ac2f0568e5b83c43065c3573a8c1768b5572c06e468e31012d35d5801d1d1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center, top center;
+  height: 250px;
+  margin-top: -80px;
+}
+
+.animation{
+  animation-name: animateIconBlockChain;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes animateIconBlockChain {
+  0% {
+    transform: rotate(0deg);
+    filter: drop-shadow(2px 2px 1px rgb(4, 91, 253));
+  }
+  25% {
+    transform: rotate(90deg);
+    filter: drop-shadow(4px 4px 2px rgb(4, 91, 253));
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 45deg);
+    filter: drop-shadow(6px 6px 4px rgb(4, 91, 253));
+  }
+  75% {
+    transform: rotate3d(-1, 1, 1, -45deg);
+    filter: drop-shadow(4px 4px 2px rgb(4, 91, 253));
+  }
+  100% {
+    transform: rotate3d(1, -1, 1, 0deg);
+    filter: drop-shadow(2px 2px 1px rgb(4, 91, 253));
+  }
+}
+
+.animationBtn{
+  animation-name: animateBtnMatriculate;
+  animation-iteration-count: infinite;
+  animation-duration: 1.3s;
+}
+
+@keyframes animateBtnMatriculate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: drop-shadow(2px 2px 8px rgb(4, 91, 253));
+  }
+  100% {
+    transform: scale(1); 
+  }
+}
+
+.bg-whatsApp {
+  background-image: linear-gradient( to right,  rgba(0, 49, 139, 0) 0%, rgba(0, 49, 139, 0) 100%), url(https://img.freepik.com/vector-gratis/fondo-redes-sociales-dibujado-mano_23-2147832986.jpg?w=740&t=st=1687439272~exp=1687439872~hmac=09fb5defcfce1c6a6783a40c4690248f79f09a247310f326739055c7ce443aba);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center, top center;
+}
